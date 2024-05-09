@@ -28,7 +28,7 @@ keymap.set("n", "<leader>bn", ":bnext<CR>") -- go to next buffer
 keymap.set("n", "<leader>bp", ":bprev<CR>") -- go to previous buffer
 
 -- plugin keymaps
-keymap.set("n", "<C-n>", ":Neotree<CR>")
+-- keymap.set("n", "<C-n>", ":Neotree<CR>")
 keymap.set("n", "<leader>fb", "<cmd>Telescope scope buffers<cr>", { noremap = true, silent = true })
 
 -- vim-maximizer

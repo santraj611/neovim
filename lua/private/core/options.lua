@@ -1,5 +1,8 @@
 local opt = vim.opt --for conciseness
 
+-- for nerd fonts
+vim.g.have_nerd_font = true
+
 -- line numbers
 opt.relativenumber = true
 opt.number = true
@@ -37,3 +40,4 @@ opt.splitbelow = true
 
 opt.scrolloff = 8
 opt.incsearch = true
+

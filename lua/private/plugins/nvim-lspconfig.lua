@@ -12,7 +12,6 @@ return {
         local on_attach = function(client, bufnr)
             opts.buffer = bufnr
 
-
             -- Mappings.
             local opts = { buffer = bufnr, noremap = true, silent = true }
             vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
@@ -47,6 +46,24 @@ return {
 
         -- configure python server
         lspconfig["pyright"].setup({
+            capabilities = capabilities,
+            on_attach = on_attach,
+        })
+
+        -- configure javascript server
+        lspconfig["tsserver"].setup({
+            capabilities = capabilities,
+            on_attach = on_attach,
+        })
+
+        -- configure go server
+        lspconfig["gopls"].setup({
+            capabilities = capabilities,
+            on_attach = on_attach,
+        })
+
+        -- configure zig server
+        lspconfig["zls"].setup({
             capabilities = capabilities,
             on_attach = on_attach,
         })

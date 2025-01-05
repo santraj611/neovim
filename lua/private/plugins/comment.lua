@@ -4,6 +4,6 @@ return -- add this to your lua/plugins.lua, lua/plugins/init.lua,  or the file y
     opts = {
         -- add any options here
     },
-    lazy = false,
+    lazy = true,
 }
 

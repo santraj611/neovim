@@ -31,8 +31,5 @@ keymap.set("n", "<leader>bp", ":bprev<CR>") -- go to previous buffer
 -- keymap.set("n", "<C-n>", ":Neotree<CR>")
 keymap.set("n", "<leader>fb", "<cmd>Telescope scope buffers<cr>", { noremap = true, silent = true })
 
--- vim-maximizer
-keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>")
-
--- disable codeium default keymaps
-vim.g.codeium_disable_bindings = 1
+-- maximizer
+keymap.set("n", "<leader>sm", ":Maximize<CR>")

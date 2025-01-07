@@ -31,42 +31,56 @@ return {
             red    = '#ff5189',
             violet = '#d183e8',
             grey   = '#303030',
+            text = '#ffffff',
+            lightsalmon = '#FFA07A',
+            lightyellow = '#FFC300',
+            lightgreen = '#9FE2BF',
+            lightergrey = '#424949',
+            lightblue = '#34495e',
         }
 
         local bubbles_theme = {
             normal = {
-                a = { fg = colors.black, bg = colors.violet },
-                b = { fg = colors.white, bg = colors.grey },
-                c = { fg = colors.white },
+                -- right side
+                a = { fg = colors.black, bg = colors.lightsalmon },
+                b = { fg = colors.text, bg = colors.lightblue},
+                c = { fg = colors.text, bg = colors.lightergrey },
+                -- left side
+                x = { fg = colors.text, bg = colors.lightergrey },
+                y = { fg = colors.text, bg = colors.lightblue },
+                z = { fg = colors.black, bg = colors.lightgreen},
             },
 
-            insert = { a = { fg = colors.black, bg = colors.blue } },
-            visual = { a = { fg = colors.black, bg = colors.cyan } },
+            insert = { a = { fg = colors.black, bg = colors.violet } },
+            visual = { a = { fg = colors.black, bg = colors.lightyellow} },
             replace = { a = { fg = colors.black, bg = colors.red } },
 
             inactive = {
                 a = { fg = colors.white, bg = colors.black },
                 b = { fg = colors.white, bg = colors.black },
                 c = { fg = colors.white },
+                z = { fg = colors.black, bg = colors.lightgreen},
             },
         }
 
         require('lualine').setup {
             options = {
-                theme = 'sonokai',
+                theme = bubbles_theme,
                 component_separators = '',
-                section_separators = { left = '', right = '' },
+                section_separators = { left = '', right = '' },
+                -- section_separators = { left = '', right = '' },
             },
             sections = {
-                lualine_a = { { 'mode', separator = { left = '' }, right_padding = 2 } },
-                lualine_b = { 'filename', 'branch' },
-                lualine_c = {
+                lualine_a = { { 'mode', separator = { left = '' }, right_padding = 2 } },
+                lualine_b = { 'filename' },
+                lualine_c = { 'branch' },
+                lualine_d = {
                     '%=', --[[ add your center compoentnts here in place of this comment ]]
                 },
-                lualine_x = {},
-                lualine_y = { 'filetype', 'progress' },
+                lualine_x = {'filetype'},
+                lualine_y = {'progress' },
                 lualine_z = {
-                    { 'location', separator = { right = '' }, left_padding = 2 },
+                    { 'location', separator = { right = '' }, left_padding = 2 },
                 },
             },
             inactive_sections = {

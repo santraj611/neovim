@@ -4,6 +4,7 @@ return {
     "williamboman/mason-lspconfig.nvim",
     config = function()
         require('mason').setup({
+
             ui = {
                 icons = {
                     package_installed = "✓",
@@ -14,10 +15,13 @@ return {
 
         })
         require('mason-lspconfig').setup({
-            ensure_installed = {'lua_ls', 'ts_ls', 'rust_analyzer', 'pyright', 'clangd'},
-            automatic_installation = false,
+            ensure_installed = {'lua_ls', 'rust_analyzer', 'pyright', 'clangd'},
+            automatic_installation = true,
         })
     end
-    }
+    },
+    opts = {
+        ensure_installed = { 'rust_analyzer' }
+    },
 }
 

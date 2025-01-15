@@ -30,6 +30,7 @@ keymap.set("n", "<leader>bp", ":bprev<CR>") -- go to previous buffer
 -- plugin keymaps
 -- keymap.set("n", "<C-n>", ":Neotree<CR>")
 keymap.set("n", "<leader>fb", "<cmd>Telescope scope buffers<cr>", { noremap = true, silent = true })
+keymap.set("n", "<leader>th", ":Themery<CR>") -- themechanger
 
 -- maximizer
 keymap.set("n", "<leader>sm", ":Maximize<CR>")

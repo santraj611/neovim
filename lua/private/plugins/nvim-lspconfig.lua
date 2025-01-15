@@ -50,12 +50,6 @@ return {
             on_attach = on_attach,
         })
 
-        -- configure javascript server
-        lspconfig["ts_ls"].setup({
-            capabilities = capabilities,
-            on_attach = on_attach,
-        })
-
         -- configure go server
         lspconfig["gopls"].setup({
             capabilities = capabilities,
@@ -66,6 +60,20 @@ return {
         lspconfig["zls"].setup({
             capabilities = capabilities,
             on_attach = on_attach,
+        })
+
+        -- configure rust server
+        lspconfig["rust_analyzer"].setup({
+            capabilities = capabilities,
+            on_attach = on_attach,
+            filetypes = { "rust" },
+            settings = {
+                ['rust-analyzer'] = {
+                    cargo = {
+                        allFeatures = true,
+                    },
+                },
+            },
         })
 
         -- configure c and c++ server

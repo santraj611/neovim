@@ -7,6 +7,7 @@ return {
     config = function()
         local lspconfig = require('lspconfig')
         local cmp_nvim_lsp = require('cmp_nvim_lsp')
+        local telescope_builtin = require('telescope.builtin')
 
         local opts = { noremap = true, silent = true }
         local on_attach = function(client, bufnr)
@@ -26,13 +27,13 @@ return {
             end, opts)
             vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, opts)
             vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, opts)
-            vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
+            -- vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
+            vim.keymap.set('n', 'gr', telescope_builtin.lsp_references, opts)
             vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
             vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
             vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
             vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
         end
-        
         -- used to enable autocompletion (assign to every lsp server config)
         local capabilities = cmp_nvim_lsp.default_capabilities()
 

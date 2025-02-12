@@ -4,7 +4,6 @@ return {
     config = function()
         local bufferline = require('bufferline')
         bufferline.setup {
-            highlights = require("rose-pine.plugins.bufferline"),
             options = {
                 mode = "buffers", -- set to "tabs" to only show tabpages instead
                 style_preset = bufferline.style_preset.default, -- or bufferline.style_preset.minimal,

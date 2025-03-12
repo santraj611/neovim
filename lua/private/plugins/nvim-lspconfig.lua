@@ -45,6 +45,17 @@ return {
             vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
         end
 
+        -- configure javascript/typescript server
+        lspconfig["ts_ls"].setup({
+            capabilities = capabilities,
+            on_attach = on_attach,
+        })
+
+        lspconfig["tailwindcss"].setup({
+            capabilities = capabilities,
+            on_attach = on_attach,
+        })
+
         -- configure python server
         lspconfig["pyright"].setup({
             capabilities = capabilities,

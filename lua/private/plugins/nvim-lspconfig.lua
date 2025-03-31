@@ -8,6 +8,7 @@ return {
         local lspconfig = require('lspconfig')
         local cmp_nvim_lsp = require('cmp_nvim_lsp')
         local telescope_builtin = require('telescope.builtin')
+        local util = require('lspconfig.util')
 
         local opts = { noremap = true, silent = true }
         local on_attach = function(client, bufnr)
@@ -56,11 +57,29 @@ return {
             on_attach = on_attach,
         })
 
+        lspconfig.kotlin_language_server.setup({
+            capabilities = capabilities,
+            on_attach = on_attach,
+        })
+
         -- configure python server
         lspconfig["pyright"].setup({
             capabilities = capabilities,
             on_attach = on_attach,
         })
+
+        -- configure mojo server
+        lspconfig.mojo.setup({
+            capabilities = capabilities,
+            on_attach = on_attach,
+
+            cmd = { 'mojo-lsp-server' },
+            filetypes = { 'mojo' },
+            root_dir = function(fname)
+                return vim.fs.dirname(vim.fs.find('.git', { path = fname, upward = true })[1])
+            end,
+            single_file_support = true,
+})
 
         -- configure go server
         lspconfig["gopls"].setup({

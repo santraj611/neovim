@@ -15,13 +15,10 @@ return {
 
         })
         require('mason-lspconfig').setup({
-            ensure_installed = {'lua_ls', 'rust_analyzer', 'pyright', 'clangd'},
+            ensure_installed = {'lua_ls', 'zls', 'pyright'},
             automatic_installation = true,
         })
     end
-    },
-    opts = {
-        ensure_installed = { 'rust_analyzer' }
     },
 }
 

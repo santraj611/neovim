@@ -46,43 +46,8 @@ return {
             vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
         end
 
-        -- configure javascript/typescript server
-        lspconfig["ts_ls"].setup({
-            capabilities = capabilities,
-            on_attach = on_attach,
-        })
-
-        lspconfig["tailwindcss"].setup({
-            capabilities = capabilities,
-            on_attach = on_attach,
-        })
-
-        lspconfig.kotlin_language_server.setup({
-            capabilities = capabilities,
-            on_attach = on_attach,
-        })
-
         -- configure python server
         lspconfig["pyright"].setup({
-            capabilities = capabilities,
-            on_attach = on_attach,
-        })
-
-        -- configure mojo server
-        lspconfig.mojo.setup({
-            capabilities = capabilities,
-            on_attach = on_attach,
-
-            cmd = { 'mojo-lsp-server' },
-            filetypes = { 'mojo' },
-            root_dir = function(fname)
-                return vim.fs.dirname(vim.fs.find('.git', { path = fname, upward = true })[1])
-            end,
-            single_file_support = true,
-})
-
-        -- configure go server
-        lspconfig["gopls"].setup({
             capabilities = capabilities,
             on_attach = on_attach,
         })
@@ -91,33 +56,6 @@ return {
         lspconfig["zls"].setup({
             capabilities = capabilities,
             on_attach = on_attach,
-        })
-
-        -- configure java server
-        lspconfig["jdtls"].setup({
-            capabilities = capabilities,
-            on_attach = on_attach,
-        })
-
-        -- configure rust server
-        lspconfig["rust_analyzer"].setup({
-            capabilities = capabilities,
-            on_attach = on_attach,
-            filetypes = { "rust" },
-            settings = {
-                ['rust-analyzer'] = {
-                    cargo = {
-                        allFeatures = true,
-                    },
-                },
-            },
-        })
-
-        -- configure c and c++ server
-        lspconfig["clangd"].setup({
-            capabilities = capabilities,
-            on_attach = on_attach,
-            filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "proto" },
         })
 
         -- configure lua server (with special settings)

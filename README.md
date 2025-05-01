@@ -9,6 +9,7 @@ It's good to do for Zig, Python and lua development.
 1. Install neovim by your package manager.
 2. clone this repo and rename it to `nvim` in your dots directory.
 
+This command does all that for you
 ```
 git clone https://github.com/santraj611/neovim.git ~/.config/nvim
 ```

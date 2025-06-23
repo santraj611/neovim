@@ -4,6 +4,7 @@ I do not recommand using it for new beginners.
 It may not support all the languages you might need.
 
 It's good to do for Zig, Python and lua development.
+![nvim-code](./nvim-code.png)
 
 ### Installation
 1. Install neovim by your package manager.

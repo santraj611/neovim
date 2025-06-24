@@ -2,6 +2,7 @@ return {
     'nvim-lualine/lualine.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
     lazy = false,
+    event = "VeryLazy", -- loads after UI becomes interactive
     config = function()
         require('lualine').setup {
             options = {

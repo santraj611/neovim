@@ -1,8 +1,13 @@
 return {
+    -- dir = "~/codes/luaforbg/custom-onedark/",
     "santraj611/custom-onedark",
-    lazy = false, -- Load on startup OR load when :colorscheme is called
-    priority = 1000, -- Make sure it loads before other plugins that depend on colors
+    lazy = false,
+    priority = 1000,
     config = function ()
-        vim.cmd("colorscheme custom-onedark")
+        local cod = require('onedark')
+        cod.setup({
+            italic_comments = true, -- or false -- Default is true
+        });
+        vim.cmd("colorscheme onedark")
     end
 }

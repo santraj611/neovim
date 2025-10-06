@@ -7,6 +7,7 @@ return {
         local cod = require('onedark')
         cod.setup({
             italic_comments = true, -- or false -- Default is true
+            bg_color = '#212629',
         });
         vim.cmd("colorscheme onedark")
     end

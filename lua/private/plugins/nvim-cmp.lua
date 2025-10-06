@@ -10,7 +10,7 @@ return {
         "L3MON4D3/LuaSnip",
         "saadparwaiz1/cmp_luasnip",
         --For Dev Icons
-        "nvim-tree/nvim-web-devicons",
+        -- "nvim-tree/nvim-web-devicons",
         "onsails/lspkind.nvim"
     },
 

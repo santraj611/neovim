@@ -18,7 +18,7 @@ return {
 
         })
         require('mason-lspconfig').setup({
-            ensure_installed = {'lua_ls', 'zls', 'pyright'},
+            ensure_installed = {'lua_ls', 'zls', 'ty'},
             automatic_installation = true,
         })
     end

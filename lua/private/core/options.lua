@@ -13,8 +13,8 @@ opt.shiftwidth = 4
 opt.expandtab = true
 opt.autoindent = true
 
--- libe wrapping
-opt.wrap = false
+-- line wrapping
+opt.wrap = true
 
 -- search setting
 opt.ignorecase = true
@@ -38,6 +38,6 @@ opt.clipboard:append("unnamedplus")
 opt.splitright = true
 opt.splitbelow = true
 
-opt.scrolloff = 8
+-- opt.scrolloff = 8
 opt.incsearch = true
 

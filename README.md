@@ -2,7 +2,7 @@
 This is a custom neovim config, designed for my personal use.
 I do not recommand using it for anybody other then myself.
 
-It's good to do for Zig, Python and lua development.
+It's good to go for Zig, Python and lua development.
 ![nvim-code](./nvim-code.png)
 
 ### Installation

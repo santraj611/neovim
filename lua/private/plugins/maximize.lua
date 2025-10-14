@@ -1,4 +1,5 @@
 return {
     'declancm/maximize.nvim',
-    config = true
+    lazy = true,
+    opts = {}
 }

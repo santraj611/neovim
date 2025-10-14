@@ -1,7 +1,7 @@
 return {
     "hrsh7th/nvim-cmp",
     event = "InsertEnter",
-    lazy = false,
+    lazy = true,
     dependencies = {
         "hrsh7th/cmp-buffer",
         "hrsh7th/cmp-path",
@@ -49,7 +49,7 @@ return {
             formatting = {
                 fields = { "kind", "abbr", "menu" },
                 format = function(entry, vim_item)
-                    local kind = require("lspkind").cmp_format({ 
+                    local kind = require("lspkind").cmp_format({
                         mode = "symbol_text",
                         maxwidth = 50,
                     })(entry, vim_item)

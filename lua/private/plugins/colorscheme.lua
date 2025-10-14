@@ -1,14 +1,13 @@
 return {
-    -- dir = "~/codes/luaforbg/custom-onedark/",
-    "santraj611/custom-onedark",
-    lazy = false,
-    priority = 1000,
-    config = function ()
-        local cod = require('onedark')
-        cod.setup({
-            italic_comments = true, -- or false -- Default is true
-            bg_color = '#212629',
-        });
-        vim.cmd("colorscheme onedark")
-    end
+    'projekt0n/github-nvim-theme',
+    name = 'github-theme',
+    lazy = false,    -- make sure we load this during startup if it is your main colorscheme
+    priority = 1000, -- make sure to load this before all the other start plugins
+    config = function()
+        require('github-theme').setup({
+            -- ...
+        })
+
+        vim.cmd('colorscheme github_dark_tritanopia')
+    end,
 }

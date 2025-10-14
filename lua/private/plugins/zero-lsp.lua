@@ -33,14 +33,14 @@ return {
 
         lsp.on_attach(function(client, bufnr)
             lsp.default_keymaps({ buffer = bufnr })
+            lsp.buffer_autoformat()
         end)
 
         vim.lsp.config('lua_ls', {
             settings = {
                 Lua = {
                     runtime = {
-                        -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
-                        version = "LuaJIT",
+                        -- version = "LuaJIT",
                         path = vim.split(package.path, ";"),
                     },
                     diagnostics = {
@@ -58,6 +58,13 @@ return {
                 },
             },
         })
+
+        -- lsp.format_on_save({
+        --     format_opts = {
+        --         async = false,
+        --         timeout_ms = 10000,
+        --     }
+        -- })
 
         lsp.setup()
     end

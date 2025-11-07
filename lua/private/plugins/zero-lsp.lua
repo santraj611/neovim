@@ -12,6 +12,12 @@ return {
   event = "BufReadPre",
   config = function()
     local lsp = require('lsp-zero')
+    lsp.set_sign_icons({
+      error = '✘',
+      warn = '▲',
+      hint = '⚑',
+      info = '»'
+    })
 
     vim.lsp.util.open_floating_preview = (function(orig)
       return function(contents, syntax, opts, ...)

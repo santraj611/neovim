@@ -1,7 +1,6 @@
 return {
   'nvim-mini/mini.nvim',
-  version = '*',
-  lazy = true,
+  lazy = false,
   config = function()
     require('mini.comment').setup()
     require('mini.icons').setup()

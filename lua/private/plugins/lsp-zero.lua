@@ -12,20 +12,17 @@ return {
   event = "BufReadPre",
   config = function()
     local lsp = require('lsp-zero')
+
+    -- setting some global variables for lsp-zero
+    vim.g.lsp_zero_ui_float_border = 'rounded'
+    vim.g.lsp_zero_ui_signcolumn = 1
+    vim.g.lsp_zero_api_warnings = 1
     lsp.set_sign_icons({
       error = '✘',
       warn = '▲',
       hint = '⚑',
       info = '»'
     })
-
-    vim.lsp.util.open_floating_preview = (function(orig)
-      return function(contents, syntax, opts, ...)
-        opts = opts or {}
-        opts.border = opts.border or "rounded"
-        return orig(contents, syntax, opts, ...)
-      end
-    end)(vim.lsp.util.open_floating_preview)
 
     lsp.on_attach(function(client, bufnr)
       lsp.default_keymaps({ buffer = bufnr })

@@ -29,3 +29,17 @@ keymap.set("n", "<leader>bp", ":bprev<CR>") -- go to previous buffer
 
 -- maximizer
 keymap.set("n", "<leader>sm", ":Maximize<CR>")
+
+-- LSP Feature Mappings (mostly current, no changes needed here based on deprecated.txt)
+keymap.set('n', 'gD', vim.lsp.buf.declaration)
+keymap.set('n', 'gd', vim.lsp.buf.definition)
+keymap.set('n', 'K', vim.lsp.buf.hover)
+keymap.set('n', 'gi', vim.lsp.buf.implementation)
+keymap.set('n', '<C-k>', vim.lsp.buf.signature_help)
+keymap.set('n', '<leader>D', vim.lsp.buf.type_definition)
+keymap.set('n', '<leader>rn', vim.lsp.buf.rename)
+keymap.set('n', '<leader>ca', vim.lsp.buf.code_action)
+keymap.set('n', 'gr', function() Snacks.picker.lsp_references() end)
+
+keymap.set('n', '[d', function() vim.diagnostic.jump({ count = -1, float = true }) end)
+keymap.set('n', ']d', function() vim.diagnostic.jump({ count = 1, float = true }) end)

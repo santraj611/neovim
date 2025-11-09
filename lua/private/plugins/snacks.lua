@@ -13,7 +13,18 @@ return {
       enabled = true,
       timeout = 3000,
     },
-    picker = { enabled = true },
+    picker = {
+      enabled = true,
+      sources = {
+        colorschemes = {
+          confirm = function(picker, item)
+            local source = require('snacks.picker.config.sources').colorschemes
+            source.confirm(picker, item)
+            save_colorscheme(item.text)
+          end,
+        },
+      },
+    },
     quickfile = { enabled = true },
     scope = { enabled = true },
     scroll = { enabled = true },
@@ -79,7 +90,7 @@ return {
     -- { "<leader>sq",      function() Snacks.picker.qflist() end,                                  desc = "Quickfix List" },
     { "<leader>sR",      function() Snacks.picker.resume() end,                                  desc = "Resume" },
     { "<leader>su",      function() Snacks.picker.undo() end,                                    desc = "Undo History" },
-    { "<leader>uC",      function() Snacks.picker.colorschemes() end,                            desc = "Colorschemes" },
+    { "<leader>th",      function() Snacks.picker.colorschemes() end,                            desc = "Colorschemes" },
 
     -- LSP
     -- { "gd",              function() Snacks.picker.lsp_definitions() end,                         desc = "Goto Definition" },
@@ -160,6 +171,12 @@ return {
         Snacks.toggle.inlay_hints():map("<leader>uh")
         Snacks.toggle.indent():map("<leader>ug")
         Snacks.toggle.dim():map("<leader>uD")
+      end,
+    })
+    vim.api.nvim_create_autocmd('User', {
+      pattern = 'LazyDone',
+      callback = function()
+        vim.cmd.colorscheme(get_colorscheme 'default')
       end,
     })
   end,

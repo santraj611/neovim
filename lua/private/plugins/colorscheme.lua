@@ -9,6 +9,7 @@ return {
   {
     "rose-pine/neovim",
     name = "rose-pine",
+    lazy = false,
   },
   {
     'deparr/tairiki.nvim',
@@ -19,5 +20,14 @@ return {
     "ellisonleao/gruvbox.nvim",
     priority = 1000,
     lazy = false,
+  },
+  {
+    "vague-theme/vague.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      require("vague").setup({
+      })
+    end
   },
 }

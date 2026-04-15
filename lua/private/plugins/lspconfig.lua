@@ -14,7 +14,12 @@ return {
     })
 
     local capabilities = require('blink.cmp').get_lsp_capabilities()
-    local servers = { 'lua_ls', 'ols', 'zls', 'basedpyright', 'cssls', 'html', 'clangd' }
+    local servers = {
+      'lua_ls', 'ols', 'zls',
+      'basedpyright', 'cssls', 'html',
+      'clangd', 'ts_ls', 'kotlin_lsp',
+      'tinymist', 'harper_ls'
+    }
 
     vim.api.nvim_create_autocmd('LspAttach', {
       callback = function(args)

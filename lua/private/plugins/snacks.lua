@@ -13,7 +13,18 @@ return {
       enabled = true,
       timeout = 3000,
     },
-    picker = { enabled = true },
+    picker = {
+      enabled = true,
+      sources = {
+        colorschemes = {
+          confirm = function(picker, item)
+            local source = require('snacks.picker.config.sources').colorschemes
+            source.confirm(picker, item)
+            save_colorscheme(item.text)
+          end,
+        },
+      },
+    },
     quickfile = { enabled = true },
     scope = { enabled = true },
     scroll = { enabled = true },
@@ -67,19 +78,19 @@ return {
     { "<leader>sC",      function() Snacks.picker.commands() end,                                desc = "Commands" },
     { "<leader>sd",      function() Snacks.picker.diagnostics() end,                             desc = "Diagnostics" },
     { "<leader>sD",      function() Snacks.picker.diagnostics_buffer() end,                      desc = "Buffer Diagnostics" },
-    { "<leader>sh",      function() Snacks.picker.help() end,                                    desc = "Help Pages" },
+    -- { "<leader>sh",      function() Snacks.picker.help() end,                                    desc = "Help Pages" },
     { "<leader>sH",      function() Snacks.picker.highlights() end,                              desc = "Highlights" },
     { "<leader>si",      function() Snacks.picker.icons() end,                                   desc = "Icons" },
     { "<leader>sj",      function() Snacks.picker.jumps() end,                                   desc = "Jumps" },
     { "<leader>sk",      function() Snacks.picker.keymaps() end,                                 desc = "Keymaps" },
     { "<leader>sl",      function() Snacks.picker.loclist() end,                                 desc = "Location List" },
-    { "<leader>sm",      function() Snacks.picker.marks() end,                                   desc = "Marks" },
+    -- { "<leader>sm",      function() Snacks.picker.marks() end,                                   desc = "Marks" },
     { "<leader>sM",      function() Snacks.picker.man() end,                                     desc = "Man Pages" },
     { "<leader>sp",      function() Snacks.picker.lazy() end,                                    desc = "Search for Plugin Spec" },
     -- { "<leader>sq",      function() Snacks.picker.qflist() end,                                  desc = "Quickfix List" },
     { "<leader>sR",      function() Snacks.picker.resume() end,                                  desc = "Resume" },
     { "<leader>su",      function() Snacks.picker.undo() end,                                    desc = "Undo History" },
-    { "<leader>uC",      function() Snacks.picker.colorschemes() end,                            desc = "Colorschemes" },
+    -- { "<leader>th",      function() Snacks.picker.colorschemes() end,                            desc = "Colorschemes" },
 
     -- LSP
     -- { "gd",              function() Snacks.picker.lsp_definitions() end,                         desc = "Goto Definition" },

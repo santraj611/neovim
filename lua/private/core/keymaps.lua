@@ -28,7 +28,7 @@ keymap.set("n", "<leader>bn", ":bnext<CR>") -- go to next buffer
 keymap.set("n", "<leader>bp", ":bprev<CR>") -- go to previous buffer
 
 -- maximizer
-keymap.set("n", "<leader>sm", ":Maximize<CR>")
+-- keymap.set("n", "<leader>ms", ":Maximize<CR>")
 
 -- LSP Feature Mappings (mostly current, no changes needed here based on deprecated.txt)
 keymap.set('n', 'gD', vim.lsp.buf.declaration)
@@ -40,6 +40,13 @@ keymap.set('n', '<leader>D', vim.lsp.buf.type_definition)
 keymap.set('n', '<leader>rn', vim.lsp.buf.rename)
 keymap.set('n', '<leader>ca', vim.lsp.buf.code_action)
 keymap.set('n', 'gr', function() Snacks.picker.lsp_references() end)
-
 keymap.set('n', '[d', function() vim.diagnostic.jump({ count = -1, float = true }) end)
 keymap.set('n', ']d', function() vim.diagnostic.jump({ count = 1, float = true }) end)
+
+-- Disable mouse support
+-- vim.keymap.set("", "<up>", "<nop>", { noremap = true })
+-- vim.keymap.set("", "<down>", "<nop>", { noremap = true })
+-- vim.keymap.set("i", "<up>", "<nop>", { noremap = true })
+-- vim.keymap.set("i", "<down>", "<nop>", { noremap = true })
+
+-- vim.opt.mouse = ""
